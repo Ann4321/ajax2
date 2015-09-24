@@ -41,11 +41,25 @@ $.ajax({
 	  console.error(data);
 	}
 });
+
+function loadJson(data){
+$.ajax({
+	url: data,
+	Type: 'GET',
+	success: function(data) {
+		$(document.body).append(data);
+	},
+	error: function(data) {
+	  console.error(data);
+	}
+});
+
 };
 
+
 loadPage(page1);
-loadPage(page1);
-loadPage(page1);
+loadPage(page2);
+loadPage(page3);
 
 loadJson(json1);
 loadJson(json2);
