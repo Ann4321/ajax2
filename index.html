@@ -33,7 +33,7 @@ $(function() {
 function loadPage(data){
 $.ajax({
 	url: data,
-	Type: 'GET',
+	type: 'GET',
 	success: function(data) {
 		$(document.body).append(data);
 	},
@@ -45,9 +45,10 @@ $.ajax({
 function loadJson(data){
 $.ajax({
 	url: data,
-	Type: 'GET',
+	type: 'GET',
+	data: 'json',
 	success: function(data) {
-		$(document.body).append(data);
+		$(document.body).append( JSON.stringify(data) + '</br>' );
 	},
 	error: function(data) {
 	  console.error(data);
