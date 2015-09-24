@@ -12,7 +12,7 @@
 <body>
 
 
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 	<script>
 
@@ -22,27 +22,30 @@ $(function() {
 		var page2 = 'data/simple2.html';
 		var page3 = 'data/simple3.html';
 
+		var json1 = 'data/some1.html';
+		var json2 = 'data/some2.html';
+		var json3 = 'data/some3.html';
 
-		$.ajax({
-	url: 'page1',
-	Type: 'Get',
-	success: function(data) {
-		document.body.html(data);
-	},
-	error: function(data) {
-	  console.error(data);
-	}
-});
+		var img1 = 'data/image1html';
+		var img2 = 'data/image2.html';
+		var img3 = 'data/image3.html';
+
+function loadPage(data){
 $.ajax({
-	url: 'page2',
-	Type: 'Get',
+	url: data,
+	Type: 'GET',
 	success: function(data) {
-		document.body.html(data);
+		$(document.body).append(data);
 	},
 	error: function(data) {
 	  console.error(data);
 	}
 });
+};
+
+loadPage(page1);
+
+
 
 });
 
