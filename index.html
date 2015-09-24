@@ -50,7 +50,7 @@ $.ajax({
 	type: 'GET',
 	data: 'json',
 	success: function(data) {
-		$(document.body).append( JSON.stringify(data) + '</br>' );
+		$(document.body).append( data.title + " "+ data.desc);
 	},
 	error: function(data) {
 	  console.error(data);
